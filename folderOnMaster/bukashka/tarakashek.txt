@@ -1,0 +1,10 @@
+def create_dirs(path):
+    try:
+    os.makedirs(path)
+    except OSError as e:
+    import errno
+
+    if e.errno != errno.EEXIST:
+    raise
+
+    return path
